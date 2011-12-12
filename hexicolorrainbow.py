@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 #
 # ..author: RemyD <remyd@civx.us>
 from colorlab import Color, color_range
@@ -54,7 +54,7 @@ print 'The HexiColorRainbow'
 # TODO: Check each hexcode for a proper color name definition
 #       If so, then print it out next to the hexcode, in the proper color
 #
-colors = list(color_range(Color(255, 255, 255), Color(0, 0, 0), 255))
+colors = list(color_range(Color(0, 255, 0), Color(0, 0, 0), 255))
 
 # Create a file called 'hexcodes.txt' to record each hex value
 f = open('hexcodes.txt', 'w')
