@@ -17,14 +17,18 @@ bitspan = lambda: range(0, 256, step)
 
 
 def print_color(r, g, b):
-    print bold(bg256('#%.2x%.2x%.2x' % (r, g, b), '  #%.2x%.2x%.2x  ' % (r, g, b)))
+    pad = '                                  '
+    pad2 = '                                     '
+    print bold(bg256('#%.2x%.2x%.2x' % (r, g, b), '%s' % pad + ' #%.2x%.2x%.2x ' % (r, g, b) + '%s' % pad2))
 
 
-f = open('hexcodes.txt', 'w')
+f = open('hexcodes-full.txt', 'w')
 
 
 from itertools import product
 for r, g, b in product(bitspan(), bitspan(), bitspan()):
     f.write("%.2x%.2x%.2x" % (r, g, b) + '\n')
     print_color(r, g, b)
+    #import time
+    #time.sleep(.1)
 f.close()
